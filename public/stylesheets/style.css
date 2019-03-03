@@ -1,0 +1,60 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  line-height:1.4;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.content {
+  padding: 50px;
+  height: 100vh;
+  position: relative;
+  color: white;
+
+}
+
+.content:before {
+  content: '';
+  position: absolute;
+  background: url("/images/background.jpg");
+  background-size: 100% 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.user-info {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+}
+
+.user-seat {
+  padding: 40px 0;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 34px;
+  margin: 0;
+}
+
+div, p {
+  font-size: 20px;
+}
