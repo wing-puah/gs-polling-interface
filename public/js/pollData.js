@@ -1,10 +1,10 @@
 $(function() {
-  const sheetID = 'REPLACE THIS WITH YOUR SHEET ID';
+  const sheetID = 'REPLACE_WITH_SHEET_ID';
+  const API_KEY= 'REPLACE_WITH_API_KEY';
   const sheetName = 'Laptop 1';
-  const API_KEY= 'REPLACE THIS WITH YOUR API KEY';
   let USER_INFO = [];
   let _temp = [];
-  let currentIdx = 2;
+  let currentIdx = 1;
 
   async function getGoogleResults(sheetRange) {
     let userInfo = [];

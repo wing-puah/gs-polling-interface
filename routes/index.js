@@ -6,11 +6,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const sheetID = 'REPLACE THIS WITH YOUR SHEET ID ';
+  const sheetID = 'REPLACE_WITH_SHEET_ID';
+  const API_KEY= 'REPLACE_WITH_API_KEY';
   const sheetName = 'Laptop 1';
-  const row = 2; // Just for the initial entry 
+  const row = 2; // Just for the initial entry
   const range = `!A1:E${row}`
-  const API_KEY= 'REPLACE THIS WITH YOUR API KEY';
   let USER_INFO = [];
   let _temp = [];
 
@@ -22,6 +22,9 @@ router.get('/', function(req, res, next) {
         const header = info[0];
         info[1].map((el, idx) => (userInfo[header[idx]] = el));
       })
+      .catch(err => {
+        console.log(`An error has occured ${err}`);
+      })
 
     await promise;
     return userInfo;
@@ -30,6 +33,9 @@ router.get('/', function(req, res, next) {
   getGoogleResults()
     .then(data => {USER_INFO = data})
     .then(() => res.render('index', { invites: USER_INFO }))
+    .catch(err => {
+      console.log(`An error has occured ${err}`);
+    })
 });
 
 module.exports = router;
